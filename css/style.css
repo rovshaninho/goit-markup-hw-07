@@ -8,26 +8,6 @@ body {
   color: var(--text-color);
 }
 
-/* === reset list markers === */
-.list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* === reset decoration links === */
-a {
-  display: block;
-  text-decoration: none;
-  color: var(--title-color);
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
 a,
 button {
   cursor: pointer;
@@ -54,15 +34,6 @@ a.social-link,
   font-weight: 500;
   display: flex;
   align-items: center;
-}
-
-.container {
-  width: 1200px;
-  padding-left: 15px;
-  padding-right: 15px;
-  text-align: center;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 header > .container {
@@ -228,15 +199,6 @@ header > .container {
 .hero-button:hover,
 .hero-button:focus {
   background-color: #188ce8;
-}
-
-/* === hidden title - main page === */
-.hidden-title {
-  position: absolute;
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
 }
 
 /* === features section === */
@@ -532,10 +494,6 @@ a.clients-link:focus {
 
 .footer .social-link {
   background-color: var(--footer-icon-bg);
-}
-/* === removes margin top from address === */
-p {
-  margin: 0;
 }
 
 .footer-contacts-link {
