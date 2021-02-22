@@ -118,6 +118,7 @@ a.social-link,
   background-color: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  /* questionnaire form */
 }
 
 .modal-close-btn {
@@ -131,6 +132,27 @@ a.social-link,
   border-radius: 50%;
   fill: var(--title-color);
   cursor: pointer;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  color: var(--text-color);
+}
+
+.modal-form .hero-button {
+  transition: background-color var(--cubic-variable), filter var(--cubic-variable);
+}
+
+.modal-title {
+  display: block;
+  margin-bottom: 12px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.172;
+  text-align: center;
+  color: var(--title-color);
 }
 
 .is-hidden {
@@ -148,17 +170,6 @@ a.social-link,
   border: 2px solid var(--accent-color);
   background-color: var(--accent-color);
   border-radius: 2px;
-}
-
-/* questionnaire form */
-.modal-form {
-  display: flex;
-  flex-direction: column;
-  color: var(--text-color);
-}
-
-.modal-form .hero-button {
-  transition: background-color var(--cubic-variable), filter var(--cubic-variable);
 }
 
 .input {
@@ -187,17 +198,6 @@ a.social-link,
   line-height: 1.171;
   letter-spacing: 0.01em;
   color: inherit;
-}
-
-.modal-title {
-  display: block;
-  margin-bottom: 12px;
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.172;
-  text-align: center;
-  color: var(--title-color);
 }
 
 .form-icon {
@@ -258,22 +258,6 @@ a.social-link,
   letter-spacing: 0.03em;
 }
 
-.checkbox {
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-}
-
-.checkbox:focus + .label::before {
-  outline: 1px solid var(--accent-color);
-}
-
-.checkbox:checked + .label::before {
-  background-image: url("../images/check.svg");
-  background-color: var(--accent-color);
-}
-
 .accept-box .label {
   display: flex;
   padding-left: 24px;
@@ -293,6 +277,22 @@ a.social-link,
 
 .accept-box .checkbox {
   display: inline;
+}
+
+.checkbox {
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.checkbox:focus + .label::before {
+  outline: 1px solid var(--accent-color);
+}
+
+.checkbox:checked + .label::before {
+  background-image: url("../images/check.svg");
+  background-color: var(--accent-color);
 }
 
 /* === our team icon design === */
@@ -370,7 +370,7 @@ a.social-link:focus {
   border-radius: 4px;
 }
 
-.client-icon {
+.clients-icon {
   fill: currentColor;
 }
 
@@ -396,23 +396,6 @@ a.clients-link:focus {
   margin-right: 8px;
 }
 
-.buttons-list {
-  padding: 6px 22px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.6;
-  letter-spacing: inherit;
-  color: var(--title-color);
-  background-color: var(--team-bg-color);
-}
-
-.buttons-list:focus,
-.buttons-list:hover {
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-  color: var(--hero-title-color);
-  background-color: var(--accent-color);
-}
-
 .work-list {
   display: flex;
   flex-wrap: wrap;
@@ -425,8 +408,8 @@ a.clients-link:focus {
   outline: 1px solid var(--portfolio-border-color);
 }
 
-.work-item > .link:hover,
-.work-item > .link:focus {
+.work-item .link:hover,
+.work-item .link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
@@ -463,11 +446,20 @@ a.clients-link:focus {
   padding: 20px 24px;
 }
 
-/* === overlay effect for team cards
- in portfolio page === */
-.team-list-img-wrapper {
-  position: relative;
-  overflow: hidden;
+.buttons-list {
+  padding: 6px 22px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: inherit;
+  color: var(--title-color);
+  background-color: var(--team-bg-color);
+}
+
+.buttons-list:hover, .buttons-list:focus {
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+  color: var(--hero-title-color);
+  background-color: var(--accent-color);
 }
 
 .overlay {
@@ -488,10 +480,20 @@ a.clients-link:focus {
   transition: var(--cubic-variable);
 }
 
+.team-list {
+  /* === overlay effect for team cards
+ in portfolio page === */
+}
+
 .team-list-link-wrapper:hover .overlay,
 .team-list-link-wrapper:focus .overlay {
   transform: translateY(0);
   opacity: 1;
+}
+
+.team-list-img-wrapper {
+  position: relative;
+  overflow: hidden;
 }
 
 /* === features section === */
@@ -502,6 +504,10 @@ a.clients-link:focus {
 
 .section-features > .container {
   text-align: left;
+}
+
+.features {
+  /* === features icon design === */
 }
 
 .features-list {
@@ -516,7 +522,6 @@ a.clients-link:focus {
   margin-right: 30px;
 }
 
-/* === features icon design === */
 .features-icons {
   display: flex;
   align-items: center;
@@ -554,7 +559,7 @@ a.clients-link:focus {
   display: flex;
 }
 
-.about-us-list > li:not(:last-child) {
+.about-us-list li:not(:last-child) {
   margin-right: 30px;
 }
 
@@ -587,28 +592,14 @@ a.clients-link:focus {
 }
 
 /* ===  our team section === */
-.our-team > .container {
-  margin-bottom: 0;
-}
-
 .our-team {
   padding-top: 94px;
   padding-bottom: 94px;
   background-color: var(--team-bg-color);
 }
 
-.team-list {
-  display: flex;
-}
-
-.team-list > li {
-  background-color: var(--hero-title-color);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 0px 0px 4px 4px;
-}
-
-.team-list > li:not(:last-child) {
-  margin-right: 30px;
+.our-team > .container {
+  margin-bottom: 0;
 }
 
 .team-photo {
@@ -626,14 +617,8 @@ a.clients-link:focus {
   color: var(--title-color);
 }
 
-.team-name,
-.team-position {
+.team-name, .team-position {
   font-size: 16px;
-}
-
-.team-name {
-  font-weight: 500;
-  color: var(--title-color);
 }
 
 .team-position {
@@ -641,6 +626,20 @@ a.clients-link:focus {
   line-height: 1.19;
   letter-spacing: 0.03em;
   margin-bottom: 16px;
+}
+
+.team-list {
+  display: flex;
+}
+
+.team-list > li {
+  background-color: var(--hero-title-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+
+.team-list > li:not(:last-child) {
+  margin-right: 30px;
 }
 
 header {
@@ -872,28 +871,6 @@ header > .container {
   fill: var(--hero-title-color);
 }
 
-/* Hero */
-.hero {
-  text-align: center;
-  background-color: var(--hero-bg-color);
-  padding-top: 200px;
-  padding-bottom: 200px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 600px;
-  max-width: 1600px;
-  background-image: linear-gradient(to right, var(--hero-gradient), var(--hero-gradient)), url(../images/main-img/main-image.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.hero-content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 696px;
-}
-
 /* === main hero title === */
 .main-title {
   margin-top: 0;
@@ -916,7 +893,29 @@ header > .container {
   cursor: pointer;
 }
 
-/* === hero-button design === */
+/* Hero */
+.hero {
+  text-align: center;
+  background-color: var(--hero-bg-color);
+  padding-top: 200px;
+  padding-bottom: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 600px;
+  max-width: 1600px;
+  background-image: linear-gradient(to right, var(--hero-gradient), var(--hero-gradient)), url(../images/main-img/main-image.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* === hero-button design === */
+}
+
+.hero-content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 696px;
+}
+
 .hero-button {
   padding: 10px 32px;
   min-width: 200px;
@@ -932,8 +931,7 @@ header > .container {
   transition: background-color var(--cubic-variable);
 }
 
-.hero-button:hover,
-.hero-button:focus {
+.hero-button:hover, .hero-button:focus {
   background-color: #188ce8;
 }
 /*# sourceMappingURL=main.css.map */

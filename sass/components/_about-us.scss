@@ -10,10 +10,9 @@
 
 .about-us-list {
   display: flex;
-}
-
-.about-us-list > li:not(:last-child) {
-  margin-right: 30px;
+  & li:not(:last-child) {
+    margin-right: 30px;
+  }
 }
 
 /* === "what we do" text wrapping === */
