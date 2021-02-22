@@ -1,4 +1,12 @@
+// utils
 @import './utils/variables';
 @import './base/common';
+
+// base
 @import './base/container';
 @import './utils/visually-hidden';
+
+//components
+@import './components/modal';
+
+// layout
