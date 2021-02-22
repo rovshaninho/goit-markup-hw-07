@@ -24,3 +24,12 @@ a.social-link,
   transition: color var(--cubic-variable),
     background-color var(--cubic-variable), box-shadow var(--cubic-variable);
 }
+
+.features-title,
+.section-title,
+.work-title {
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  color: var(--title-color);
+}
